@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏫 School Website
 
-## Getting Started
+A school website built with **Next.js** and **PostgreSQL**. It shares the school's vision and news, and has an admin page to manage extra-curricular activities.
 
-First, run the development server:
+## ✨ Features
+
+- 🏠 **Home page**: school vision and a message from the King
+- ℹ️ **About us** and 📞 **Contact us** pages
+- 📝 **Apply form**: people can send their details
+- 🎯 **Extra-curricular activities (CRUD)**:
+  - ➕ Add a new activity
+  - ✏️ Edit an activity
+  - 🗑️ Delete an activity
+  - 🔍 Search activities
+- 🗄️ Data saved in PostgreSQL with Knex migrations and seed data
+
+## 🛠 Built with
+
+| Part | Tech |
+| --- | --- |
+| Frontend | Next.js 16, React 19, TypeScript, Tailwind CSS |
+| Backend | Next.js API routes (REST) |
+| Database | PostgreSQL + Knex.js (migrations & seeds) |
+
+## 🚀 Run it locally
+
+**1. Clone and install**
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/AshishRai-0197/school_website.git
+cd school_website
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**2. Create a `.env` file**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```env
+PD_USER=your_db_user
+PD_PASS=your_db_password
+PD_DB=school_website
+PD_PORT=5432
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**3. Create the tables, add sample data, and start**
 
-## Learn More
+```bash
+npx knex migrate:latest
+npx knex seed:run
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Then open [http://localhost:3000](http://localhost:3000).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔌 API routes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Method | Route | What it does |
+| --- | --- | --- |
+| GET / POST | `/api/curricular` | List / add activities |
+| PUT | `/api/update/[id]` | Edit an activity |
+| DELETE | `/api/delete/[id]` | Delete an activity |
+| GET | `/api/search/[id]` | Find an activity |
+| GET / POST | `/api/contact` | Read / save contact details |
 
-## Deploy on Vercel
+## 👤 Author
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Ashish Rai**: [LinkedIn](https://www.linkedin.com/in/ashish-rai-776022383/) · [GitHub](https://github.com/AshishRai-0197)
