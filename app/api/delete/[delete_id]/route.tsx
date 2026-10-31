@@ -6,7 +6,7 @@ const kn = knex(knexConfig.development);
 
 export async function DELETE(
   request: Request,
-  { params }: { params: { delete_id: string } }
+  { params }: { params: Promise<{ delete_id: string }> }
 ) {
   try {
     const { delete_id } = await params;

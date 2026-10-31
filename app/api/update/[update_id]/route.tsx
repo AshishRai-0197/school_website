@@ -6,7 +6,7 @@ const kn = knex(knexConfig.development);
 
 export async function PUT(
   request: Request,
-  { params }: { params: { update_id: string } }
+  { params }: { params: Promise<{ update_id: string }> }
 ) {
   try {
     const { update_id } = await params;
