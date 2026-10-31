@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AdminLink from "./AdminLink";
 
 export default function Navbar() {
   return (
@@ -35,6 +36,10 @@ export default function Navbar() {
         <li>
           <Link href="/curricular" className="hover:text-gray-400 cursor-pointer shadow-lg text-white hover:underline"> Extra-Curricular</Link>
          
+        </li>
+
+        <li>
+          <AdminLink />
         </li>
       </ul>
     </nav>

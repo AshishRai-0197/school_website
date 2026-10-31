@@ -6,6 +6,6 @@ exports.seed = async function (knex) {
   // Deletes ALL existing entries
   await knex('curricular').del()
   await knex('curricular').insert([
-    { id: 1, name: 'Democracy', coordinator: "Mr.Dorji", noOfStudent: 30, activity: "coordinating election, advocacy on election, camping, " }
+    { name: 'Democracy', coordinator: "Mr.Dorji", noOfStudent: 30, activity: "coordinating election, advocacy on election, camping, " }
   ]);
 };

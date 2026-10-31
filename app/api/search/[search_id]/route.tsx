@@ -6,7 +6,7 @@ const kn = knex(knexConfig.development);
 
 export async function GET(
   request: Request,
-  { params }: { params: { search_id: string } }
+  { params }: { params: Promise<{ search_id: string }> }
 ) {
   try {
     const { search_id } = await params;

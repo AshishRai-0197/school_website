@@ -20,7 +20,7 @@ export default function Adding() {
     }
     const fetchData = async () => {
 
-        const res = await fetch('http://localhost:3000/api/curricular', {
+        const res = await fetch('/api/curricular', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData)

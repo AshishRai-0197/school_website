@@ -19,7 +19,7 @@ export default function Update() {
     const fetchData = async () => {
       console.log("Fetching data for ID:", id);
       try {
-        const res = await fetch(`http://localhost:3000/api/curricular/${id}`);
+        const res = await fetch(`/api/curricular/${id}`);
         console.log("Fetch response status:", res.status);
         if (res.ok) {
           const result = await res.json();
@@ -48,7 +48,7 @@ export default function Update() {
     e.preventDefault();
     console.log("Form data being submitted:", formData);
     try {
-      const res = await fetch(`http://localhost:3000/api/curricular/${id}`, {
+      const res = await fetch(`/api/curricular/${id}`, {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(formData),
